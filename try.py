@@ -47,10 +47,11 @@ ratings["num_of_ratings"] = pd.DataFrame(df.groupby("Book-Title").count()["book_
 
 matrix_book = df.pivot_table(index="user_id", columns="Book-Title", values="book_rating")
 #print(book_metrix)
-print(ratings.sort_values("num_of_ratings", ascending=False))
+
 davinci_code_ratings = matrix_book["The Da Vinci Code"]
 #print(davinci_code_ratings.head())
 similar_davinci = matrix_book.corrwith(davinci_code_ratings)
+print(similar_davinci)
 #print(similar_davinci)
 corr_dav = pd.DataFrame(similar_davinci, columns=["Correlation"])
 #print(corr_dav.head())
