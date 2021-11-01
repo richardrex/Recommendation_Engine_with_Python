@@ -18,6 +18,7 @@ user_rating = user_rating.dropna(thresh=10, axis=1).fillna(0)
 
 book_similarity_df = user_rating.corr(method="pearson")
 
+ratings_book.to_csv("ratings_book.csv", sep=";")
 
 
 def similarity_books(book_title, rate):

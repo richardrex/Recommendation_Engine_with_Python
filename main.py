@@ -61,5 +61,4 @@ def bookFilter(user_ID):
                          'Assumed Rating': assumed_ratings})
 
 
-for user in users_to_copy:
-    bookFilter(users_to_copy[user])
+
