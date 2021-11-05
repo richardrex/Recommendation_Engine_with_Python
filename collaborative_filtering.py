@@ -24,17 +24,16 @@ ratings_book.to_csv("ratings_book.csv", sep=";")
 def similarity_books(book_title, rate):
     scores = book_similarity_df[book_title] * (rate - 2.5)
     scores = scores.sort_values(ascending=False)
-    print(scores)
     return scores
 
 
 
-favorite_books = [("Girl with a Pearl Earring", 4),("Life of Pi", 5),("A Map of the World", 3)]
+favorite_books = [("Harry Potter and the Chamber of Secrets (Book 2)", 10)]
 similar_books = pd.DataFrame()
 for book, rate in favorite_books:
     similar_books = similar_books.append(similarity_books(book, rate), ignore_index=True)
-print(similar_books.head())
-print(similar_books.sum().sort_values(ascending=False))
+
+    print(similar_books.sum().sort_values(ascending=False))
 
 
 
